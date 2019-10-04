@@ -9,7 +9,7 @@ while (1)
 	if (!is_numeric($num))
 		echo "'$num' n'est pas un chiffre\n";
 	else
-		if ($num % 2 == 0)
+		if (!($num % 2))
 			echo "Le nombre $num est Pair\n";
 		else
 			echo "Le nombre $num est Impair\n";
