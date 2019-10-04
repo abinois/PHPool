@@ -1,4 +1,11 @@
 li { list-style-type: none; }
+body {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	background-image: url(https://www.reviewjournal.com/wp-content/uploads/2019/08/12548824_web1_CEREAL_080919ev_017.jpg);
+	background-repeat: repeat;
+}
 .main{
 	position:absolute;
 	top:50px;
