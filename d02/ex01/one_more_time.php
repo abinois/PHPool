@@ -2,33 +2,31 @@
 <?php
 function get_month($month)
 {
-	switch ($month)
-	{
-		case "/[Jj]anvier/":
-			return (1);
-		case "/[Ff][eé]vrier/":
-			return (2);
-		case "/[Mm]ars/":
-			return (3);
-		case "/[Aa]vril/":
-			return (4);
-		case "/[Mm]ai/":
-			return (5);
-		case "/[Jj]uin/":
-			return (6);
-		case "/[Jj]uillet/":
-			return (7);
-		case "/[Aa]o[uû]t/":
-			return (8);
-		case "/[Ss]eptembre/":
-			return (9);
-		case "/[Oo]ctobre/":
-			return (10);
-		case "/[Nn]ovembre/":
-			return (11);
-		case "/[Dd][eé]cembre/":
-			return (12);
-	}
+if (preg_match("/[Jj]anvier/", $month))
+	return (1);
+elseif (preg_match("/[Ff][eé]vrier/", $month))
+	return (2);
+elseif (preg_match("/[Mm]ars/", $month))
+	return (3);
+elseif (preg_match("/[Aa]vril/", $month))
+	return (4);
+elseif (preg_match("/[Mm]ai/", $month))
+	return (5);
+elseif (preg_match("/[Jj]uin/", $month))
+	return (6);
+elseif (preg_match("/[Jj]uillet/", $month))
+	return (7);
+elseif (preg_match("/[Aa]o[uû]t/", $month))
+	return (8);
+elseif (preg_match("/[Ss]eptembre/", $month))
+	return (9);
+elseif (preg_match("/[Oo]ctobre/", $month))
+	return (10);
+elseif (preg_match("/[Nn]ovembre/", $month))
+	return (11);
+elseif (preg_match("/[Dd][eé]cembre/", $month))
+	return (12);
+return(0);
 }
 if ($argv > 1)
 {
@@ -39,6 +37,7 @@ if ($argv > 1)
 		$tab = explode(" ", $argv[1]);
 		$time = explode(":", $tab[4]);
 		$month = get_month($tab[2]);
+		date_default_timezone_set('Europe/Paris');
 		echo mktime($time[0], $time[1], $time[2], $month, $tab[1], $tab[3])."\n";
 	}
 }
