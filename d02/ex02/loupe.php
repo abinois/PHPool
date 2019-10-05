@@ -15,9 +15,9 @@ function match_up2($tab)
 if ($argc > 1)
 {
 	$file = file_get_contents($argv[1]);
-	$strup = preg_replace_callback("/(<a.*title=\"{0,1})(.+)(>.*\/a>)/i", "match_up", $file);
+	$strup = preg_replace_callback("/(<a.*title=\"{0,1})([\\w\\s]+)(\"{0,1}>.*\/a>)/i", "match_up", $file);
 	$strup = preg_replace_callback("/(<a.*?>)(.*)(<.+>)(.*)(<\/a>)/i", "match_up2", $strup);
-	$strup = preg_replace_callback("/(<a.*?>)([^<>]+)(<\/a>)/i", "match_up", $strup);
+	$strup = preg_replace_callback("/(<a.*?>)([\\w\\s]+)(<\/a>)/i", "match_up", $strup);
 	echo "$strup\n";
 }
 ?>
