@@ -8,8 +8,9 @@ function match_up($tab)
 if ($argc > 1)
 {
 	$file = file_get_contents($argv[1]);
-	$strup = preg_replace_callback("/(<a.*title=\")(.*)(\".*>.*\/a>)/", "match_up", $string);
-	$strup = preg_replace_callback("/(<a.*>)(.*)(<.*\/a>)/", "match_up", $string);
+	$strup = preg_replace_callback("/(<a.*title=\")(.*)(\".*>)/", "match_up", $file);
+	$strup = preg_replace_callback("/(<a.*>)(.*)(<)/", "match_up", $file);
+	$strup = preg_replace_callback("/(<a.*>.*<.*title=\")(.*)(\")/.*>", "match_up", $file);
 	echo "$strup\n";
 }
 ?>
