@@ -11,7 +11,10 @@ foreach ($matches[1] as $key => $match)
 		$match = $match[0] != '/' ? $argv[1]."/".$match : $argv[1].$match;
 	$file_name = strrchr($match, '/');
 	if (file_exists($host.$file_name))
-		$file_name = $file_name."($key)";
+	{
+		$ext = strrchr($file_name, '.');
+		$file_name = str_ireplace("$ext", "($key)$ext", $file_name);
+	}
 	file_put_contents($host.$file_name, file_get_contents($match));
 }
 ?>
