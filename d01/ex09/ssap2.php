@@ -2,7 +2,7 @@
 <?php
 function ft_split($str)
 {
-	$tab = explode(" ", preg_replace('/\\s+/', " ", trim($str)));
+	$tab = explode(" ", preg_replace('/\s+/', " ", trim($str)));
 	return($tab);
 }
 foreach ($argv as $index => $tab)

@@ -5,7 +5,7 @@ if ($argc != 4)
 else
 {
 	foreach ($argv as $arg)
-		$op[] = preg_replace('/\\s+/', " ", trim($arg));
+		$op[] = preg_replace('/\s+/', " ", trim($arg));
 	switch ($op[2])
 	{
 		case "+":
