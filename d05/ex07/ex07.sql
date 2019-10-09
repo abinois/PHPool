@@ -1,3 +1,3 @@
 SELECT titre, resum FROM `film`
 WHERE titre LIKE '%42%' OR resum LIKE '%42%'
-ORDER BY LENGTH(titre) ASC;
+ORDER BY duree_min ASC;
