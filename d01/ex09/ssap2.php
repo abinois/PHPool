@@ -19,13 +19,22 @@ foreach ($argv as $index => $tab)
 				$other[] = $arg;
 		}
 	}
-sort($num);
-sort($alpha, SORT_STRING | SORT_FLAG_CASE);
-sort($other);
-foreach ($alpha as $elem)
-	echo "$elem\n";
-foreach ($num as $elem)
-	echo "$elem\n";
-foreach ($other as $elem)
-	echo "$elem\n";
+if ($alpha)
+{
+	sort($alpha, SORT_STRING | SORT_FLAG_CASE);
+	foreach ($alpha as $elem)
+		echo "$elem\n";
+}
+if ($num)
+{
+	sort($num);
+	foreach ($num as $elem)
+		echo "$elem\n";
+}
+if ($other)
+{
+	sort($other);
+	foreach ($other as $elem)
+		echo "$elem\n";
+}
 ?>
