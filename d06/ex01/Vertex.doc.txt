@@ -1,0 +1,11 @@
+<- Vertex ----------------------------------------------------------------------
+Insctance contenant les coordonnées 'x', 'y', 'z' et 'w' d'un point,
+ainsi qu'un objet 'color' de type Color (blanc par défault).
+
+Fonctions d'accès:		Fonctions d'assignation:
+	- x_of()    			-set_x()
+	- y_of()     			-set_y()
+	- z_of()     			-set_z()
+	- w_of()     			-set_w()
+	- color_of()			-set_color()
+---------------------------------------------------------------------- Vertex ->
