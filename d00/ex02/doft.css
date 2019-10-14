@@ -56,6 +56,7 @@ header .quit {margin:0px 6px 0px 0px;}
 .middle
 {
 	width: 70%;
+	min-width: 850px;
 	display: flex;
 	justify-content: space-between;
 	margin: auto;
@@ -87,18 +88,18 @@ nav,.cluster img
 	position: relative;
 	top: -30%;
 	left: -13%;
-	height: 10%;
-	width: 20px;
-	border: solid blue 15px;
+	height: 12%;
+	width: 5%;
+	border: solid transparent 15px;
 }
 .apple_link
 {
 	position: relative;
 	top: -42%;
 	left: 38%;
-	height: 40px;
-	width: 10%;
-	border: solid red 15px;
+	height: 80px;
+	width: 12%;
+	border: solid transparent 15px;
 }
 /*--------------     LEFT NAV       ----------------*/
 .bouton img
@@ -158,10 +159,10 @@ nav,.cluster img
 	padding: 10px;
 	background-color: #22fa53;
 	border-radius: 10px 10px 10px 10px;
-	z-index:1;
-	position: absolute;
-	top:60%;
-	left: 13%;
+	z-index: 1;
+	position: relative;
+	top: -280px;
+	left: 10%;
 	box-shadow: 10px 10px 8px black;
 }
 .chat .action
