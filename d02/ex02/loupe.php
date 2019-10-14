@@ -13,7 +13,7 @@ function match_up2($tab)
 if ($argc > 1)
 {
 	$file = file_get_contents($argv[1]);
-	$new = preg_replace_callback("/(<a.*title=\"?)([\w\s]+)(\"?>.*\/a>)/i", "match_up", $file);
+	$new = preg_replace_callback("/(<a.*title=[\'\"]?)([\w\s]+)([\'\"]?>.*\/a>)/i", "match_up", $file);
 	$new = preg_replace_callback("/(<a.*?>)([\w\s]*)(<.*?>)?([\w\s]*)(< *\/a>)/i", "match_up2", $new);
 	echo "$new\n";
 }
