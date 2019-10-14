@@ -7,13 +7,13 @@ body
 header
 {
 	background-color: #909090;
-	width:75%;
+	width: 75%;
 	height: 130px;
 	min-width: 850px;
 	display:flex;
 	justify-content: space-between;
 	align-items: center;
-	margin:auto;
+	margin: auto;
 	border-radius: 10px 10px 10px 10px;
 	box-shadow: 10px 10px 8px black;
 }
@@ -51,16 +51,15 @@ header .quit {margin:0px 6px 0px 0px;}
 .main
 {
 	min-width: 900px;
-	z-index:0;
+	z-index: 0;
 }
 .middle
 {
 	width: 70%;
-	display:flex;
+	display: flex;
+	justify-content: space-between;
 	margin: auto;
 	margin-top: 30px;
-	position: relative;
-	right: -3.8%;
 }
 nav,.cluster img
 {
@@ -76,31 +75,30 @@ nav,.cluster img
 }
 .cluster
 {
-	margin:0px;
 	display: flex;
-	flex-direction:column;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 70%;
-	min-width:600px;
+	width: 75%;
+	min-width: 600px;
 }
 .ikea_link
 {
-	position:relative;
+	position: relative;
 	top: -30%;
-	left:-13%;
-	height:35px;
-	width:20px;
-	border: solid transparent 15px;
+	left: -13%;
+	height: 10%;
+	width: 20px;
+	border: solid blue 15px;
 }
 .apple_link
 {
-	position:relative;
-	top: -40%;
-	left:38%;
-	height:40px;
-	width:55px;
-	border: solid transparent 15px;
+	position: relative;
+	top: -42%;
+	left: 38%;
+	height: 40px;
+	width: 10%;
+	border: solid red 15px;
 }
 /*--------------     LEFT NAV       ----------------*/
 .bouton img
@@ -115,7 +113,7 @@ nav,.cluster img
 	margin-right: 3%; 
 	flex-direction: column;
 	justify-content:center;
-	width:10%;
+	width: 10%;
 	align-items: center;
 	min-width: 85px;
 	max-width: 100px;
@@ -154,7 +152,7 @@ nav,.cluster img
 	flex-direction:column;
 	justify-content:flex-start;
 	min-width: 400px;
-	max-width: 550px;
+	max-width: 450px;
 	height: 120px;
 	margin: 0px;
 	padding: 10px;
@@ -163,7 +161,7 @@ nav,.cluster img
 	z-index:1;
 	position: absolute;
 	top:60%;
-	left: 10%;
+	left: 13%;
 	box-shadow: 10px 10px 8px black;
 }
 .chat .action
