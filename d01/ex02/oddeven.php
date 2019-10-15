@@ -10,8 +10,8 @@ while (1)
 		echo "'$num' n'est pas un chiffre\n";
 	else
 		if (!($num % 2))
-			echo "Le nombre $num est Pair\n";
+			echo "Le chiffre $num est Pair\n";
 		else
-			echo "Le nombre $num est Impair\n";
+			echo "Le chiffre $num est Impair\n";
 }
 ?>

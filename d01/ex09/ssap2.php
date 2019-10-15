@@ -7,14 +7,14 @@ function ft_split($str)
 }
 function special_strcmp($str1, $str2)
 {
-	$i = 0;
+	$i = -1;
 	$len1 = strlen($str1);
 	$len2 = strlen($str2);
 	$len = $len1 < $len2 ? $len1 : $len2;
 	$str1 = strtolower($str1);
 	$str2 = strtolower($str2);
 	$base = "abcdefghijklmnopqrstuvwxyz0123456789";
-	while ($i < $len)
+	while (++$i < $len)
 	{
 		if (strpos($base, $str1[$i]) === FALSE && strpos($base, $str2[$i]) === FALSE && $str1[$i] > $str2[$i])
 			return (TRUE);
@@ -24,28 +24,23 @@ function special_strcmp($str1, $str2)
 			return (FALSE);
 		if (strpos($base, $str1[$i]) - strpos($base, $str2[$i]) > 0)
 			return (TRUE);
-		$i++;
 	}
 	return ($len == $len2 ? TRUE : FALSE);
 }
 function custom_sort($tab)
 {
-	$i = 0;
+	$i = -1;
 	$len = count($tab);
-	while ($i < $len - 1)
+	while (++$i < $len - 1)
 	{
-		$j = 1;
-		while ($i + $j < $len)
-		{
+		$j = 0;
+		while ($i + ++$j < $len)
 			if (special_strcmp($tab[$i], $tab[$i + $j]))
 			{
 				$tmp = $tab[$i];
 				$tab[$i] = $tab[$i + $j];
 				$tab[$i + $j] = $tmp;
 			}
-			$j++;
-		}
-		$i++;
 	}
 	return ($tab);
 }

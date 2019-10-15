@@ -5,6 +5,8 @@ foreach ($argv as $index => $arg)
 	{
 		$val = explode(':', trim($arg));
 		if ($val[0] == $argv[1])
-			echo "$val[1]\n";
+			$lastval = $val[1];
 	}
+if ($lastval)
+	echo "$lastval\n";
 ?>
