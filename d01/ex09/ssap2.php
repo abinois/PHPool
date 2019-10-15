@@ -26,7 +26,7 @@ function special_strcmp($str1, $str2)
 			return (TRUE);
 		$i++;
 	}
-
+	return ($len == $len2 ? TRUE : FALSE);
 }
 function custom_sort($tab)
 {
