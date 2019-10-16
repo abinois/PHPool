@@ -14,7 +14,7 @@ function match_a($tab)
 if ($argc > 1)
 {
 	$file = file_get_contents($argv[1]);
-	$new = preg_replace_callback("/(<a.*>.*< *\/a>)/", "match_a", $file);
+	$new = preg_replace_callback("/(<a.*>.*< *\/a>)/si", "match_a", $file);
 	echo $new;
 }
 ?>
