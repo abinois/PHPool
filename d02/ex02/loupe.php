@@ -1,20 +1,20 @@
 #!/usr/bin/php
 <?php
-function match_up($tab)
+function make_up($tab)
 {
 	$str = $tab[1].strtoupper($tab[2]).$tab[3];
 	return ($str);
 }
-function match_up2($tab)
+function match_a($tab)
 {
-	$str = $tab[1].strtoupper($tab[2]).$tab[3].strtoupper($tab[4]).$tab[5];
+	$str = preg_replace_callback("/(title=[\'\"])([\w\s]+)([\'\"])/i", "make_up", $tab[1]);
+	$str = preg_replace_callback("/(>)([\w\s]+)(<)/i", "make_up", $str);
 	return ($str);
 }
 if ($argc > 1)
 {
 	$file = file_get_contents($argv[1]);
-	$new = preg_replace_callback("/(<a.*title=[\'\"]?)([\w\s]+)([\'\"]?>.*\/a>)/i", "match_up", $file);
-	$new = preg_replace_callback("/(<a.*?>)([\w\s]*)(<.*?>)?([\w\s]*)(< *\/a>)/i", "match_up2", $new);
-	echo "$new\n";
+	$new = preg_replace_callback("/(<a.*>.*< *\/a>)/", "match_a", $file);
+	echo $new;
 }
 ?>
