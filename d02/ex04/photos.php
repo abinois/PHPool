@@ -8,7 +8,7 @@ if (!file_exists($host))
 	mkdir($host);
 foreach ($matches[1] as $key => $match)
 {
-	if (!strstr($match, $argv[1]))
+	if (!strstr($match, $argv[1]) && !strstr($match, "http"))
 		$match = $match[0] != '/' ? $argv[1]."/".$match : $argv[1].$match;
 	$file_name = strrchr($match, '/');
 	if (file_exists($host.$file_name))

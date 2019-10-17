@@ -8,7 +8,7 @@ while (($str = fread($fd, 628)))
 	if ($tab[type] == "7")
 	{
 		$date = date("M j H:i", $tab[time1]);
-		echo "$tab[user]  $tab[line]  $date\n";
+		echo $tab[user]."  ".$tab[line]."  ".$date."\n";
 	}
 }
 ?>

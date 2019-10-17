@@ -7,7 +7,7 @@ function make_up($tab)
 }
 function match_a($tab)
 {
-	$str = preg_replace_callback("/(title=[\'\"])([\w\s]+)([\'\"])/i", "make_up", $tab[1]);
+	$str = preg_replace_callback("/(title\s*=\s*[\'\"])([\w\s]+)([\'\"])/i", "make_up", $tab[1]);
 	$str = preg_replace_callback("/(>)([\w\s]+)(<)/i", "make_up", $str);
 	return ($str);
 }
