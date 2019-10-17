@@ -1,6 +1,7 @@
 #!/usr/bin/php
 <?php
-$source = file_get_contents($argv[1]);
+if(($source = file_get_contents($argv[1])) === FALSE)
+	exit();
 preg_match_all("/<img.+src=\"(.*?)\"/", $source, $matches);
 $host = parse_url($argv[1], PHP_URL_HOST);
 if (!file_exists($host))
