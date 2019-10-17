@@ -28,7 +28,7 @@ elseif (preg_match("/[Dd][eé]cembre/", $month))
 	return (12);
 return(0);
 }
-if ($argv > 1)
+if ($argc > 1)
 {
 	if (!(preg_match("/^([Ll]undi|[Mm]ardi|[Mm]ercredi|[Jj]eudi|[Vv]endredi|[Ss]amedi|[Dd]imanche) (0?[1-9]|[1-2][0-9]|3[0-1]) ([Jj]anvier|[Ff][eé]vrier|[Mm]ars|[Aa]vril|[Mm]ai|[Jj]uin|[Jj]uillet|[Aa]o[uû]t|[Oo]ctobre|(([Ss]ept|[Nn]ov|[Dd][eé]c)embre)) [0-9]{4} ([0-1][0-9]|2[0-4]):([0-5][0-9]|60):([0-5][0-9]|60)$/", $argv[1])))
 		echo "Wrong Format\n";
