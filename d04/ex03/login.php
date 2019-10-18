@@ -1,13 +1,12 @@
 <?php
 session_start();
 include "auth.php";
-if ($_GET["login"] != "" && $_GET["passwd"] != "" && auth($_GET["login"], $_GET["passwd"])
+if ($_GET["login"] != "" && $_GET["passwd"] != "" && auth($_GET["login"] && $_GET["passwd"])
 {
-	$_SESSION["logued_on_user"] = $GET["login"];
-	echo "OK\n";
-	exit();
+	$_SESSION["loggued_on_user"] = $_GET["login"];
+	exit ("OK\n");
 }
-$_SESSION["logued_on_user"] = "";
-echo "ERROR\n";
+$_SESSION["loggued_on_user"] = "";
+exit ("ERROR\n");
 ?
 ?>
