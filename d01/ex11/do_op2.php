@@ -4,7 +4,7 @@ if ($argc != 2)
 	echo "Incorrect Parameters\n";
 else
 {
-	$string = preg_replace('/\s+/', " ", trim($argv[1]));
+	$string = preg_replace('/\s+/', "", trim($argv[1]));
 	$tab = sscanf($string, "%d%c%d");
 	if (count($tab) == 3 && is_numeric($tab[0]) && is_numeric($tab[2]))
 	{
