@@ -1,7 +1,11 @@
 <?php
-session_start();
-if ($_SESSION["loggued_on_user"] != NULL)
+Function ft_logout($tab)
 {
-	$_SESSION["loggued_on_user"] = "";
-	$_SESSION["admin"] = "";
+	if ($tab)
+	{
+		$tab["loggued_on_user"] = "";
+		$tab["loggued_on_pwd"] = "";
+		$tab["admin"] = "";
+	}
+}
 ?>

@@ -1,5 +1,5 @@
 <?php
-Function ($login)
+Function admin ($login)
 {
     if (($table = unserialize(file_get_contents("private/passwd"))) === FALSE)
 		return (FALSE);

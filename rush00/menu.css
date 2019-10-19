@@ -59,3 +59,19 @@ body {
 .niveau1:hover ul.niveau2 { display: block; }
 .menu0 {border-radius:8px 8px 0px 0px;}
 .menu4 {border-radius:0px 0px 8px 8px;}
+
+
+.error_mess
+{
+	color: red;
+	font-style: italic;
+	font-family: monospace;
+	font-size: 1em;
+}
+.hello_mess
+{
+	color: green;
+	font-style: italic;
+	font-family: monospace;
+	font-size: 1em;
+}

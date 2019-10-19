@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+include "rush.php";
+include "create.php";
+?>
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -98,24 +101,25 @@
 		<div class="showroom">
 		</div>
 		<nav>
-			<form method="POST" action="rush.php">
+			<form method="POST" action="">
 				<p>Déjà membre ?</p></br>
-				<p>Identifiant: </p><input type="text" name="login" placeholder="login" /></br>
-				<p>Mot de passe: </p><input type="password" name="passwd" placeholder="passwd" /></br>
-				<input type="submit" name="submit" value="login" />
+				Identifiant: <input type="text" name="login" placeholder="login" /></br>
+				Mot de passe: <input type="password" name="passwd" placeholder="passwd" /></br>
+				<input type="submit" name="submitlog" value="login" />
 				<?PHP
-				session_start();
-				if (!isset($_SESSION["loggued_on_user"]))
-					echo "<p>Login incorrect<p>";
-				if ($_SESSION["loggued_on_pwd"] != "yes")
-					echo "<p>Mot de passe incorrect<p>";
+					if (isset($_POST['submitlog']) && isset($error))
+						echo $error;
 				?>
 			</form>
-			<form method="POST" action="create.php">
+			<form method="POST" action="">
 				<p>Devenir membre maintenant !</p></br>
-				<p>Identifiant: </p><input type="text" name="login" placeholder="login" /></br>
-				<p>Mot de passe: </p><input type="password" name="passwd" placeholder="passwd" /></br>
-				<input type="submit" name="submit" value="sign in" />
+				Identifiant: <input type="text" name="newuser" placeholder="login" /></br>
+				Mot de passe: <input type="password" name="newpwd" placeholder="passwd" /></br>
+				<input type="submit" name="submitnew" value="sign in" />
+				<?PHP
+					if (isset($_POST['submitnew']) && isset($error))
+						echo $error;
+				?>
 			</form>
 			<a href="panier.html">panier</a>
 		</nav>
