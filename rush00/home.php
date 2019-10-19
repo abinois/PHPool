@@ -5,7 +5,7 @@ include "create.php";
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Menu SNCF</title>
+		<title>La Céréalité</title>
 		<link rel="stylesheet" href="menu.css">
 		<link rel="stylesheet" href="form.css">
 	</head>	
@@ -104,7 +104,7 @@ include "create.php";
 			<form method="POST" action="">
 				<p>Déjà membre ?</p></br>
 				Identifiant: <input type="text" name="login" placeholder="login" /></br>
-				Mot de passe: <input type="password" name="passwd" placeholder="passwd" /></br>
+				Mot de passe: <input type="password" name="passwd" placeholder="passwd" />
 				<input type="submit" name="submitlog" value="login" />
 				<?PHP
 					if (isset($_POST['submitlog']) && isset($error))
@@ -114,14 +114,16 @@ include "create.php";
 			<form method="POST" action="">
 				<p>Devenir membre maintenant !</p></br>
 				Identifiant: <input type="text" name="newuser" placeholder="login" /></br>
-				Mot de passe: <input type="password" name="newpwd" placeholder="passwd" /></br>
+				Mot de passe: <input type="password" name="newpwd" placeholder="passwd" />
 				<input type="submit" name="submitnew" value="sign in" />
 				<?PHP
 					if (isset($_POST['submitnew']) && isset($error))
 						echo $error;
 				?>
 			</form>
-			<a href="panier.html">panier</a>
 		</nav>
+		<div>
+			<a  class="panier" href="panier.html" title="panier" alt="panier"><img src="/img/panier.png" alt="shoping kart"/></a>
+		</div>
 	</body>
 </html>
