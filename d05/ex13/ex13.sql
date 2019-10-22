@@ -1,2 +1,1 @@
-SELECT round(sum(`nbr_siege`) / count(id_salle)) AS `moyenne`
-FROM `salle`;
+SELECT round(sum(`nb_seats`) / count(`id_cinema`)) AS `average` FROM `cinema`;
