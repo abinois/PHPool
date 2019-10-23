@@ -1,7 +1,7 @@
 <?php
 
-include_once('UnholyFactory.class.php');
-include_once('Fighter.class.php');
+include_once('../../ex06/UnholyFactory.class.php');
+include_once('../../ex06/Fighter.class.php');
 
 class Footsoldier extends Fighter {
 	public function __construct() {

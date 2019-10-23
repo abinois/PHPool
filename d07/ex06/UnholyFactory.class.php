@@ -4,19 +4,18 @@ Class UnholyFactory
 	private $factory = array();
 	Function absorb($fighter_obj)
 	{
-		if (get_parent_class($fighter_obj) == "Fighter")
+		if (get_parent_class($fighter_obj) === "Fighter")
 		{
-			$fighter_name = $fighter_obj->name;
-			if (isset($this->factory[$fighter_name]))
-				echo "(Factory already absorbed a fighter of type $fighter_name)\n";
+			if (isset($this->factory[$fighter_obj->name]))
+				echo "(Factory already absorbed a fighter of type $fighter_obj->name)\n";
 			else
 			{
-				$this->factory[$fighter_name] = $fighter_obj;
-				echo "(Factory absorbed a fighter of type $fighter_name)\n";
+				$this->factory[$fighter_obj->name] = $fighter_obj;
+				echo "(Factory absorbed a fighter of type $fighter_obj->name)\n";
 			}
-			return;
 		}
-		echo "(Factory can't absorb this, it's not a fighter)\n";
+		else
+			echo "(Factory can't absorb this, it's not a fighter)\n";
 	}
 	Function fabricate($fighter_name)
 	{
