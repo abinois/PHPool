@@ -6,6 +6,8 @@ class Tyrion extends Lannister
 		parent::__construct();
 		echo "My name is Tyrion\n";
 	}
-	Function getSize() { return "Short"; }
+	Function getSize() {
+		return "Short";
+	}
 }
 ?>

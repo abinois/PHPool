@@ -6,7 +6,7 @@ Class Tyrion
 		if ($princess instanceof Sansa)
 			echo "Let's do this.\n";
 		else
-			echo "Not event if I'm drunk !\n";
+			echo "Not even if I'm drunk !\n";
 	}
 }
 ?>

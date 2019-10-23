@@ -5,10 +5,10 @@ Class Jaime
 	{
 		if ($princess instanceof Sansa)
 			echo "Let's do this.\n";
-		elseif ($princess instanceof Cercei)
-			echo "With pleasure, but only in a tower in Winterfell, them.\n";
+		elseif ($princess instanceof Cersei)
+			echo "With pleasure, but only in a tower in Winterfell, then.\n";
 		else
-			echo "Not event if I'm drunk !\n";
+			echo "Not even if I'm drunk !\n";
 	}
 }
 ?>
