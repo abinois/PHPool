@@ -1,6 +1,7 @@
 <- Vertex ----------------------------------------------------------------------
-Insctance contenant les coordonnées 'x', 'y', 'z' et 'w' d'un point,
-ainsi qu'un objet 'color' de type Color (blanc par défault).
+Instancie un objet ayant pour variables 'x', 'y', 'z' et 'w' correspondants
+aux coordonnées d'un point, ainsi qu'une variable 'color'
+qui est une instance de la class Color (blanc par défault).
 
 Fonctions d'accès:		Fonctions d'assignation:
 	- x_of()    			-set_x()
