@@ -7,14 +7,14 @@ function make_up($tab)
 }
 function match_a($tab)
 {
-	$str = preg_replace_callback("/(title\s*=\s*[\'\"])([\w\s]+)([\'\"])/i", "make_up", $tab[1]);
-	$str = preg_replace_callback("/(>)([\w\s]+)(<)/i", "make_up", $str);
+	$str = preg_replace_callback("/(title\s*=\s*[\'\"])(.+?)([\'\"])/ui", "make_up", $tab[1]);
+	$str = preg_replace_callback("/(>)(.+?)(<)/ui", "make_up", $str);
 	return ($str);
 }
 if ($argc > 1)
 {
 	$file = file_get_contents($argv[1]);
-	$new = preg_replace_callback("/(<a.*>.*< *\/a>)/si", "match_a", $file);
+	$new = preg_replace_callback("/(<a.*>.*< *\/a>)/sui", "match_a", $file);
 	echo $new;
 }
 ?>
