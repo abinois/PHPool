@@ -1,5 +1,5 @@
 <?php
-Class NightsWatch implements IFighter
+Class NightsWatch
 {
 	private $staff = array();
 	Function recruit($new_staff)
@@ -9,7 +9,7 @@ Class NightsWatch implements IFighter
 	Function fight()
 	{
 		foreach ($this->staff as $people)
-			if(method_exists(get_class($people), "fight"))
+			if (method_exists(get_class($people), "fight"))
 				$people->fight();
 	}
 }

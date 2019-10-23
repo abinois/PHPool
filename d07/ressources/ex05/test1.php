@@ -1,7 +1,7 @@
 <?php
 
-include_once('IFighter.class.php');
-include_once('NightsWatch.class.php');
+include_once('../../ex05/IFighter.class.php');
+include_once('../../ex05/NightsWatch.class.php');
 
 class JonSnow implements IFighter {
 	public function fight() {
