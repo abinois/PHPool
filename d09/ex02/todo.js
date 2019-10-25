@@ -1,18 +1,37 @@
 var bouton = document.getElementById("new");
 bouton.addEventListener("click", ft_Add);
 var index = 0;
+console.log(document.cookie);
 function ft_Cookie()
 {
-    cookies = document.cookie;
-    if (cookies)
+    if (document.cookie)
     {
+        var cookies = document.cookie.split(';');
         var tab = [];
         for (i in cookies)
-            tab.push(cookies[i]);
+        {
+            console.log(i+" cookie[i]="+cookies[i]);
+            var cooky = cookies[i].split('=');
+            tab.push(cooky[1]);
+            console.log("val="+cooky[1]);
+            var date = new Date();
+            date.setTime(date.getTime() + (1000*12*60*60));
+            end = "; expires=" + date.toUTCString();
+            cookies = index + "=" + cookies[i]+end;
+            index++;
+        }
+        index = 0;
         for (n = tab.length - 1; n >= 0; n--)
         {
+            var node = document.createElement("div");
+            node.setAttribute("class", "todo");
+            node.setAttribute("id", index);
+            index++;
+            node.setAttribute("title", "click to delete the task");
+            node.addEventListener("click", ft_Del);
+            node.innerHTML = tab[n];
             grosse_list = document.getElementById("ft_list");
-            grosse_list.insertBefore(tab[n], grosse_list.firstChild);
+            grosse_list.insertBefore(node, grosse_list.firstChild);
         }
     }
 }
@@ -32,9 +51,8 @@ function ft_Add()
 
         var date = new Date();
         date.setTime(date.getTime() + (1000*12*60*60));
-        alert(date.toUTCString());
         end = "; expires=" + date.toUTCString();
-        document.cookie = index+"="+encodeURIComponent(todo)+end;
+        document.cookie = index+"="+todo.innerHTML+end;
         index++;
     console.log(document.cookie);
     }
