@@ -1,69 +1,53 @@
 var bouton = document.getElementById("new");
 bouton.addEventListener("click", ft_Add);
 var index = 0;
-console.log(document.cookie);
-function ft_Cookie()
-{
+
+function ft_Cookie() {
     if (document.cookie)
     {
         var cookies = document.cookie.split(';');
         var tab = [];
         for (i in cookies)
         {
-            console.log(i+" cookie[i]="+cookies[i]);
-            var cooky = cookies[i].split('=');
-            tab.push(cooky[1]);
-            console.log("val="+cooky[1]);
-            var date = new Date();
-            date.setTime(date.getTime() + (1000*12*60*60));
-            end = "; expires=" + date.toUTCString();
-            cookies = index + "=" + cookies[i]+end;
-            index++;
+            // copy value & delete the cookie.
+            var cooky = cookies[i].trim(); 
+            var eq = cooky.indexOf("=");
+            tab.push(cooky.substr(eq + 1));
+            var key = eq > 1 ? cooky.substr(0, eq) : cooky[0];
+            document.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
         }
-        index = 0;
-        for (n = tab.length - 1; n >= 0; n--)
-        {
-            var node = document.createElement("div");
-            node.setAttribute("class", "todo");
-            node.setAttribute("id", index);
-            index++;
-            node.setAttribute("title", "click to delete the task");
-            node.addEventListener("click", ft_Del);
-            node.innerHTML = tab[n];
-            grosse_list = document.getElementById("ft_list");
-            grosse_list.insertBefore(node, grosse_list.firstChild);
-        }
+        for (n in tab)
+            ft_Setelem(tab[n]);
     }
 }
-function ft_Add()
-{
+
+function ft_Add() {
     var tache = prompt("Ajouter une tache");
     if (tache && tache.trim())
-    {
-        var todo = document.createElement("div");
-        todo.setAttribute("class", "todo");
-        todo.setAttribute("id", index);
-        todo.setAttribute("title", "click to delete the task");
-        todo.innerHTML = tache;
-        var grosse_list = document.getElementById("ft_list");
-        grosse_list.insertBefore(todo, grosse_list.firstChild);
-        todo.addEventListener("click", ft_Del);
-
-        var date = new Date();
-        date.setTime(date.getTime() + (1000*12*60*60));
-        end = "; expires=" + date.toUTCString();
-        document.cookie = index+"="+todo.innerHTML+end;
-        index++;
-    console.log(document.cookie);
-    }
+        ft_Setelem(tache);
 }
+
 function ft_Del() {
     if (confirm("Ceci à l'air urgent, êtes-vous sûr de vouloir le supprimer?"))
     {
         this.remove();
-        for (c in document.cookie)
-            if (c == this.id)
-                document.cookie = this.id + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-        console.log(document.cookie);
+        document.cookie = this.id + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
+}
+
+function ft_Setelem(data) {
+    // set un cookie pour 1h.
+    var date = new Date();
+    date.setTime(date.getTime() + (1000*1*60*60));
+    var end = "; expires=" + date.toUTCString();
+    document.cookie = index + "=" + data + end;
+    // set et insert l'element dans le DOM.
+    var node = document.createElement("div");
+    node.innerHTML = data;
+    node.setAttribute("class", "todo");
+    node.setAttribute("id", index++);
+    node.setAttribute("title", "click to delete the task");
+    node.addEventListener("click", ft_Del);
+    var grosse_list = document.getElementById("ft_list");
+    grosse_list.insertBefore(node, grosse_list.firstChild);
 }
