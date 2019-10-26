@@ -39,9 +39,9 @@
 			setInterval(function() { alert("Please use me..."); }, 30000);
 		</script>
 		<script>
+			$(document).ready(function (){
             $("#tryme").click(ft_Calc);
-			function ft_Calc()
-			{
+			function ft_Calc() {
 				var operator = $("#op").val();
 				var left = $("#val1").val();
                 var right = $("#val2").val();
@@ -58,8 +58,8 @@
 					var result = !parseInt(right) ? "It’s over 9000!" : parseInt(left) / parseInt(right);
 				else if (operator == 'mod')
 					var result = !parseInt(right) ? "It’s over 9000!" : parseInt(left) % parseInt(right);
-				alert(result);
-			}
+				alert(result); }
+			});
 		</script>
 	</body>
 </html>

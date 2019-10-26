@@ -38,25 +38,22 @@
 		<div id="loon"></div>
 	</div>
 	<script>
+		$(document).ready(function(){
 		var color = ["red", "green", "blue"];
 		var i = 0;
         $("#loon").click(ft_Click);
         $("#loon").mouseleave(ft_Leave);
-		function ft_Click()
-		{
+		function ft_Click() {
             $("#loon").css("width", ($("#loon").css("width") >= "420px" ? "200px" : "+=10"));
             $("#loon").css("height", ($("#loon").css("height") >= "420px" ? "200px" : "+=10"));
 			i = i == 2 ? 0 : i + 1;
-            $("#loon").css("background-color", color[i]);
-
-		}
-		function ft_Leave()
-		{
+            $("#loon").css("background-color", color[i]); }
+		function ft_Leave() {
             $("#loon").css("width", ($("#loon").css("width") > "200px" ? "-=5" : "200px"));
             $("#loon").css("height", ($("#loon").css("height") > "200px" ? "-=5" : "200px"));
 			i = i == 0 ? 2 : i - 1;
-            $("#loon").css("background-color", color[i]);
-		}
+            $("#loon").css("background-color", color[i]); }
+		});
 	</script>
 </body>
 </html>
