@@ -9,7 +9,6 @@ function ft_Cookie() {
         var tab = [];
         for (i in cookies)
         {
-            // copy value & delete the cookie.
             var cooky = cookies[i].trim(); 
             var eq = cooky.indexOf("=");
             tab.push(cooky.substr(eq + 1));
@@ -36,12 +35,10 @@ function ft_Del() {
 }
 
 function ft_Setelem(data) {
-    // set un cookie pour 1h.
     var date = new Date();
     date.setTime(date.getTime() + (1000*1*60*60));
     var end = "; expires=" + date.toUTCString();
     document.cookie = index + "=" + data + end;
-    // set et insert l'element dans le DOM.
     var node = document.createElement("div");
     node.innerHTML = data;
     node.setAttribute("class", "todo");

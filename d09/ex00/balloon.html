@@ -40,8 +40,8 @@
 		balloon.addEventListener("mouseleave", ft_Leave);
 		function ft_Click()
 		{
-			balloon.style.width = balloon.offsetWidth == 420 ? "200px" : balloon.offsetWidth + 10 + "px";
-			balloon.style.height = balloon.offsetHeight == 420 ? "200px" : balloon.offsetHeight + 10 + "px";
+			balloon.style.width = balloon.offsetWidth >= 420 ? "200px" : balloon.offsetWidth + 10 + "px";
+			balloon.style.height = balloon.offsetHeight >= 420 ? "200px" : balloon.offsetHeight + 10 + "px";
 			i = i == 2 ? 0 : i + 1;
 			balloon.style.backgroundColor = color[i];
 
