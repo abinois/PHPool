@@ -8,7 +8,8 @@ $.ajax({
     success: function(tab){
         var tab2 = $.parseJSON(tab);
         for (n in tab2)
-            ft_Setelem(tab2[n]);
+            if (tab2[n])
+                ft_Setelem(tab2[n]);
     }
 });
     
